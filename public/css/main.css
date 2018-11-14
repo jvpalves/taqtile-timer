@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@keyframes opacity-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+
+html {
+  background-color: #1D2029;
+}
+
+.tq-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.tq-bg-animated {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #D3334D;
+  transition: 0.5s all ease;
+}
+
+.tq-center-aligned {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tq-bg-black {
+  background-color: #1D2029;
+}
+
+.tq-bg-red {
+  background-color: #D3334D;
+}
+
+.tq-clock {
+  order: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  transition: all 0.2s ease;
+}
+
+.tq-clock.active {
+  color: #FFFFFF;
+}
+
+.tq-clock .active {
+  color: #FFFFFF;
+}
+
+.instructions {
+  animation: opacity-scale 2s;
+  transition: all 0.2s ease;
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 98px;
+  opacity: 0.5;
+}
+
+.instructions.active{
+    opacity: 0;
+}
+
+.instructions .arrows {
+  width: 146px;
+  height: 66px;
+  align-self: flex-start;
+}
+
+.instructions .space {
+  width: 144px;
+  height: 33px;
+}
+
+.instructions .reset {
+  width: 60px;
+  height: 33px;
+}
+
+.instructions .text {
+  display: inline-block;
+  margin: 0px 30px 0px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  font-family: "Montserrat";
+  letter-spacing: 1px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: rgba(0,0,0,0.2);
+  color: rgb(93, 95, 100);
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 400;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.footer.active {
+  opacity: 0;
+}
+
+.tq-logo {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 89px;
+}

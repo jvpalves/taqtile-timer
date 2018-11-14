@@ -1,0 +1,63 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title TaqTimer - A minimal and beautiful free timer
+    meta(name='application-name', content='TaqTimer')
+    meta(name='description', content='A minimal and beautiful free timer to time your activities, generating a sense of urgence. For instance design sprint dynamics, development daily meetings, among others.')
+    meta(name='abstract', content='A minimal and beautiful free timer to time your activities, generating a sense of urgence. For instance design sprint dynamics, development daily meetings, among others.')
+    meta(name='subject', content='A minimal and beautiful free timer.')
+    meta(name='topic', content='Timer')
+    meta(name='robots', content='timer,taqtile,taqtimer,design sprint,design,sprint,gv')
+    meta(name='googlebot', content='index,follow')
+    meta(name='url', content='http://timer.taqtile.io')
+    meta(name='category', content='timer,design,minimal,free,design sprint,sprint,GV,taqtile,taqtimer')    
+    
+    link(rel='stylesheet', href='css/normalize.css', media='screen', title='Main Style', charset='utf-8')
+    link(rel='stylesheet', href='css/main.css', media='screen', title='Main Style', charset='utf-8')
+    link(rel='icon', type='image/png', href='favicon-32x32.png', sizes='32x32')
+    link(rel='icon', type='image/png', href='favicon-16x16.png', sizes='16x16')
+      
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-78869717-1', 'auto');
+      ga('send', 'pageview');
+
+
+  body
+    .tq-container.tq-bg-black
+      #tq-bg.tq-bg-animated.tq-bg-red
+      #tq-timer.tq-center-aligned
+        #tq-display.tq-clock 
+          span#tq-minutes.active 10
+          | :
+          span#tq-seconds 00
+        #tq-instructions.instructions
+          img.key_holder.arrows(src="images/ic_key_arrows.png")
+          .text to set timer
+          img.key_holder.space(src="images/ic_key_space.png")
+          .text to start/stop
+          img.key_holder.reset(src="images/ic_key_reset.png")
+          .text to reset
+          
+      
+      #tq-footer.footer
+        | Made in a hurry by 
+        a(href="http://taqtile.com.br", target="_blank") 
+          img.tq-logo(src='images/taqtile-horizontal.png')
+
+    script(src='bower_components/easytimer.js/dist/easytimer.min.js')
+    script(src='js/taq-timer.js')
+    script.
+      var timerInstance = new Timer(),
+      bg = document.getElementById('tq-bg'),
+      display = document.getElementById('tq-display'),
+      minutes = document.getElementById('tq-minutes'),
+      seconds = document.getElementById('tq-seconds'),
+      instructions = document.getElementById('tq-instructions'),
+      footer = document.getElementById('tq-footer');
+      TaqTimer(timerInstance, bg, display);
